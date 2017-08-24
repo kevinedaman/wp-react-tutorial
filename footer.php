@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 * Theme Footer
 *
@@ -7,6 +7,8 @@
  */
 
 ?>
+
+<?php wp_footer(); ?>
 
 </body>
 </html>
