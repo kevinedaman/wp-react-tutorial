@@ -180,3 +180,33 @@ The header.php file is where we are going to put everything that goes above the 
   </head>
   <body>
 ```
+
+### footer.php
+Like the header, the footer.php is very similar in that it contains a function that Wordpress core accesses, wp_footer().  The other information you put in the footer are closing tags for anything that opened up in the header.  Also, if we weren't going to do everything with react, you would put the footer content in the footer.php.
+
+1. Comment Block
+
+```
+<?php
+/**
+* Theme Footer
+*
+* @package Wordpress React Setup Tutorial
+* @version 1.0
+ */
+
+?>
+```
+
+2. Closing Tags
+
+```
+</body>
+</html>
+```
+
+3. Footer function
+
+```
+<?php wp_footer(); ?>
+```
