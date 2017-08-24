@@ -50,7 +50,7 @@ The two things that every theme needs is the style.css and the index.php.
 
 In the stylesheet, the information in the code block at the top, is what defines the theme for Wordpress.
 
-According to the Wordpress Codex (https://codex.wordpress.org/Theme_Development) the stylesheet should contain:
+According to the [Wordpress Codex] (https://codex.wordpress.org/Theme_Development) the stylesheet should contain:
   1. Theme Name
   2. Theme URI
   3. Author
@@ -128,3 +128,55 @@ This is the main template, and must be present in the theme.  At this point, we 
 ```
 
 ### header.php
+
+The header.php file is where we are going to put everything that goes above the body in a normal HTML file and the function wp_head php/Wordpress function.
+
+1. Like the other files, we start with a comment block.
+
+```
+<?php
+/**
+ * Theme Header
+ *
+ * @package Wordpress React Setup Tutorial
+ * @version 1.0
+ */
+ ?>
+```
+2. Next, the doctype and head up to the opening <body>.
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+```
+3. The wp_head() function that brings in the head information that gets put together by Wordpress.  This goes right above the closing </head> tag.
+
+```
+<?php wp_head(); ?>
+```
+#### You end up with a file that looks like this:
+
+```
+<?php
+/**
+ * Theme Header
+ *
+ * @package Wordpress React Setup Tutorial
+ * @version 1.0
+ */
+ ?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  <?php wp_head(); ?>
+  </head>
+  <body>
+```

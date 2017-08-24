@@ -1,8 +1,8 @@
 <?php
 /**
-* Theme Name: Wordpress React Setup Tutorial
-* Version: 1.0
-*/
+ * @package Wordpress React Setup Tutorial
+ * @version 1.0
+ */
 ?>
 
 <?php get_header(); ?>
