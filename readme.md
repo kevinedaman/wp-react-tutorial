@@ -258,3 +258,40 @@ We don't have a lot of information in these three files.  If you wanted to put a
 
   </body>
 </html>
+```
+
+### functions.php
+The next file we need to set up is the functions.php file.  This is the file that sets up various parts of your theme, in particular, sourcing any javascript or CSS files that you need.
+
+1. Comment Block
+
+```
+<?php
+/**
+ * enqueue scripts and styles
+ * @package Wordpress React Setup Tutorial
+ * @version 1.0
+ */
+```
+* note - we are going to keep the php open for the whole document.
+
+2. Theme Scripts - This is where the js and css gets set up.  wp_enqueue_style takes care of the CSS, wp_enqueue_script takes care of the js.
+
+```
+function theme_scripts() {
+  wp_enqueue_style ('stylesheet', get_stylesheet_uri() );
+
+
+  //adds the compiled react file
+  wp_enqueue_script ('bundle', get_template_directory_uri() . '/assets/bundle.js', array('jquery'), 1.0, true);
+
+  //makes various wordpress settings available for use in the JS
+  wp_localize_script('queries', 'WPsettings', array(
+			'root' => esc_url_raw( rest_url() )
+		));
+
+}
+add_action( 'wp_enqueue_scripts', 'theme_scripts');
+
+?>
+```
