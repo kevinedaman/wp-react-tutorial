@@ -345,3 +345,15 @@ module.exports = {
   ]
 };
 ```
+
+We still have a few more steps before we are up and running.
+
+1. NPM install everything that we configured in Webpack, this includes Babel, the babel presets, and react
+
+```
+npm install babel babel-loader babel-preset-latest babel-preset-stage-0 babel-preset-react --save-dev
+```
+You also want to run a separate install without the dev tag for react and react-dom
+```
+npm install react react-dom --save
+```
