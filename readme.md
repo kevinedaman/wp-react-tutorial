@@ -295,3 +295,53 @@ add_action( 'wp_enqueue_scripts', 'theme_scripts');
 
 ?>
 ```
+## Installing and Configuring Webpack
+
+After we have Wordpress set up, the next step is to get Webpack setup.  While we could just source React in and write the website that way, Webpack opens up the possibility to use more powerful tools, and streamlines the development process as well.
+
+I prefer to use NPM to set up Webpack.
+
+1. In the command line, run NPM Init for this project to create the package.json file.
+
+2. Next, run the command npm install webpack --save-dev
+
+3. Create a file called webpack.config.js
+
+* if you are using git, you will also want to create a .gitignore file and add node_modules to it.  This keeps the node_modules folder from ending up on git.
+
+Once you have created the webpack.config.js, we can add the configuration information to the file.
+
+For this project, we are going to configure Webpack to package all of our JS files up into a file called bundle.js, set up Babel so that we can use ES6, and set up the jquery plugin, for the AJAX calls.  The reason we are using jQuery and not a leaner option, is because jQuery is already included in Wordpress.
+
+Your configuration file will end up looking like this:
+
+```
+var webpack = require('webpack');
+
+module.exports = {
+  entry: __dirname + '/src/index.js',
+  output: {
+    path: __dirname + '/public/assets',
+    filename: 'bundle.js',
+    publicPath: 'assets'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['latest', 'stage-0', 'react']
+        }
+      }
+    ]
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+    $: "jquery",
+    jQuery: "jquery"
+  })
+  ]
+};
+```

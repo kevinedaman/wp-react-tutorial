@@ -1,0 +1,33 @@
+{
+  "name": "wp-react-setup",
+  "version": "1.0.0",
+  "description": "tutorial setting up React with Wordpress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinDahlberg/wp-react-tutorial.git"
+  },
+  "keywords": [
+    "Wordpress",
+    "React",
+    "Webpack",
+    "Babel"
+  ],
+  "author": "Kevin Dahlberg",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/KevinDahlberg/wp-react-tutorial/issues"
+  },
+  "homepage": "https://github.com/KevinDahlberg/wp-react-tutorial#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^3.5.5"
+  }
+}
