@@ -357,3 +357,16 @@ You also want to run a separate install without the dev tag for react and react-
 ```
 npm install react react-dom --save
 ```
+
+2. Set up your scripts in package.json.
+You need a build script to compile all of the Javascript (and anything else) that you have set up in webpack.
+
+```
+"build": "webpack --config webpack.config.js",
+```
+The other thing, which is nice to have, is a watch command.  What this will do is refresh your build every time you save.
+```
+"watch": "webpack --watch"
+```
+
+One thing I didn't set up, which I might on a strictly react project, is a dev server.  This is because everything we do is already up and running in our Wordpress environment.  
