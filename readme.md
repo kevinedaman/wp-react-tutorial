@@ -370,3 +370,11 @@ The other thing, which is nice to have, is a watch command.  What this will do i
 ```
 
 One thing I didn't set up, which I might on a strictly react project, is a dev server.  This is because everything we do is already up and running in our Wordpress environment.  
+
+When you are building your theme, before you go over to your dev environment, you are going to want to run ```npm build``` to create the compiled file, or run ```npm watch``` and let Webpack build the bundle.js whenever you save.  
+
+## Adding Components and Building Your Blog
+
+This tutorial was designed to provide the bare essentials to building a Wordpress Theme with React.js.  The rest, is up to you.  You can add components and use the Wordpress REST API to get all or some of the posts from the Wordpress database.  Tutorials for that are for another day, though.  
+
+All of the source files are provided in the [GitHub repository] (https://github.com/KevinDahlberg/wp-react-tutorial) for this tutorial.  You can follow along, or take what I have started and build something cool with it.  
